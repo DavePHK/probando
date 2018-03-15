@@ -1,12 +1,9 @@
 import numpy as np
 import matplotlib.pyplot as plt
 
-x=np.linspace(0,100,500)
-y=np.exp(x/(-50))*np.sin(x)
-
+datos=np.loadtxt('fecha_manchas.dat')
+x=datos[:,0]
+y=datos[:,1]
 plt.figure()
-plt.plot(x,y)
-plt.savefig('grafica.png')
-
-
-
+plt.scatter(x,y,s=0.3)
+plt.savefig('grafica.pdf')
