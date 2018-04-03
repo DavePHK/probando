@@ -1,11 +1,9 @@
-fecha_manchas.pdf: grafica.py fecha_manchas.dat
-	python grafica.py
+grafalbum.pdf: grafalbum.py datos.txt
+	python grafalbum.py
 
-fecha_manchas.dat: monthrg.dat procesa.py
-	python procesa.py
+datos.txt: album
+	./album > datos.txt
 
-monthrg.dat: 
-	wget https://raw.githubusercontent.com/ComputoCienciasUniandes/MetodosComputacionalesDatos/master/hands_on/solar/monthrg.dat
-
-
+album: album.cpp
+	c++ album.cpp -o album
 
